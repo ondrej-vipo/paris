@@ -546,7 +546,7 @@
          * Magic getter method, allows $model->property access to data.
          *
          * @param  string $property
-         * @return null|string
+         * @return mixed
          */
         public function __get($property) {
             return $this->orm->get($property);
@@ -556,7 +556,7 @@
          * Magic setter method, allows $model->property = 'value' access to data.
          *
          * @param  string $property
-         * @param  string $value
+         * @param  mixed $value
          * @return void
          */
         public function __set($property, $value) {
@@ -649,7 +649,7 @@
         /**
          * Save the data associated with this model instance to the database.
          *
-         * @return null
+         * @return bool
          */
         public function save() {
             return $this->orm->save();
@@ -658,7 +658,7 @@
         /**
          * Delete the database row associated with this model instance.
          *
-         * @return null
+         * @return bool
          */
         public function delete() {
             return $this->orm->delete();
@@ -667,7 +667,7 @@
         /**
          * Get the database ID of this model instance.
          *
-         * @return integer
+         * @return mixed
          */
         public function id() {
             return $this->orm->id();
